@@ -8,12 +8,13 @@ class Solution(object):
         length = len(nums)
         if length <= 1:
             print("The input does not meet the requirement")
+            return 0
 
         result_index = []
         flag = 0 
         for i in range(length):
-            for j in range(length):
-                if ((i < j) and (nums[i] + nums[j] == target)):
+            for j in range(i+1, length):
+                if (nums[i] + nums[j] == target):
                     flag = 1
                     result_index.append(i)
                     result_index.append(j)
@@ -25,6 +26,11 @@ class Solution(object):
 
 if __name__ == "__main__":
     solution = Solution()
+
+    nums0 = [2]
+    target0 = 9
+    result_index0 = solution.twoSum(nums0, target0)
+    # print(result_index0)
 
     nums1 = [2, 7, 11, 15]
     target1 = 9
@@ -41,6 +47,7 @@ if __name__ == "__main__":
     result_index3 = solution.twoSum(nums3, target3)
     print(result_index3)
 
-
-
-        
+    nums4 = [4,3]
+    target4 = 6
+    result_index4 = solution.twoSum(nums4, target4)
+    # print(result_index4)
