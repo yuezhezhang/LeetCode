@@ -4,6 +4,7 @@
 #include <unordered_map>
 
 
+// Brute force approach
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
@@ -30,6 +31,7 @@ public:
 };
 
 
+// Use hash map once
 class Solution2 {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
@@ -58,6 +60,38 @@ public:
 };
 
 
+// Use hash map twice
+class Solution3 {
+public:
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
+        // get the lengthe of the vector
+        int length = nums.size();
+        if (length <= 1) throw "The input does not meet the requirement";
+
+        std::unordered_map<int, int> map;
+        for (auto i = 0; i < length; ++i)
+        {
+            map.insert({nums[i], i});
+        }
+
+        // start iteration
+        for (auto i = 0; i < length; ++i)
+        {
+            auto iter = map.find(target - nums[i]);
+            if ((iter != map.end()) && (iter->second != i))
+            {
+                // std::cout << iter->second << std::endl;
+                return {iter->second, i};
+            }
+        }
+
+        // check if the solution found
+        std::cout << "There is no soution" << std::endl; 
+        return {};
+    }
+};
+
+
 void info(std::vector<int> result_index)
 {   
     int length = result_index.size();
@@ -72,7 +106,7 @@ void info(std::vector<int> result_index)
 
 
 int main(){
-    Solution2 solution;
+    Solution3 solution;
 
     std::vector<int> nums0 = {2};
     int target0 = 7;
