@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <exception>
+#include <unordered_map>
+
 
 class Solution {
 public:
@@ -27,6 +29,35 @@ public:
     }
 };
 
+
+class Solution2 {
+public:
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
+        // get the lengthe of the vector
+        int length = nums.size();
+        if (length <= 1) throw "The input does not meet the requirement";
+
+        std::unordered_map<int, int> map;
+
+        // start iteration
+        for (auto i = 0; i < length; ++i)
+        {
+            auto iter = map.find(target - nums[i]);
+            if (iter != map.end())
+            {
+                // std::cout << iter->second << std::endl;
+                return {iter->second, i};
+            }
+            map.insert({nums[i], i}); // store the value that has been searched but has no answer
+        }
+
+        // check if the solution found
+        std::cout << "There is no soution" << std::endl; 
+        return {};
+    }
+};
+
+
 void info(std::vector<int> result_index)
 {   
     int length = result_index.size();
@@ -39,8 +70,9 @@ void info(std::vector<int> result_index)
     }
 }
 
+
 int main(){
-    Solution solution;
+    Solution2 solution;
 
     std::vector<int> nums0 = {2};
     int target0 = 7;
