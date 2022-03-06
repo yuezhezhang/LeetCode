@@ -8,21 +8,15 @@ class Solution(object):
         length = len(nums)
         if length <= 1:
             print("The input does not meet the requirement")
-            return 0
+            return []
 
-        result_index = []
-        flag = 0 
         for i in range(length):
             for j in range(i+1, length):
                 if (nums[i] + nums[j] == target):
-                    flag = 1
-                    result_index.append(i)
-                    result_index.append(j)
+                    return [i, j]
 
-        if flag == 0:
-            print("There is no soution")
-
-        return result_index
+        print("There is no soution")
+        return []
 
 if __name__ == "__main__":
     solution = Solution()
