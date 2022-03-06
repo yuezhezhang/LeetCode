@@ -18,8 +18,29 @@ class Solution(object):
         print("There is no soution")
         return []
 
+
+class Solution2(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        length = len(nums)
+        if length <= 1:
+            print("The input does not meet the requirement")
+            return []
+
+        for i in range(length):
+            if ((target - nums[i] in nums) and nums.index(target - nums[i]) != i):
+                return [i, nums.index(target - nums[i])]
+
+        print("There is no soution")
+        return []
+
+
 if __name__ == "__main__":
-    solution = Solution()
+    solution = Solution2()
 
     nums0 = [2]
     target0 = 9
