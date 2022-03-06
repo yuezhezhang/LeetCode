@@ -51,10 +51,16 @@ public:
 int main(){
     Solution solution;
 
-    std::vector<int> nums0 = {2, 7, 11, 15};
+    std::vector<int> nums0 = {2};
     int target0 = 7;
-    std::vector<int> result_index0 = solution.twoSum(nums0, target0);
-    solution.info(result_index0);
+    try
+    {
+        std::vector<int> result_index0 = solution.twoSum(nums0, target0);
+    }
+    catch (const char* msg)
+    {
+        std::cerr<< msg << std::endl;
+    }
 
     std::vector<int> nums1 = {2, 7, 11, 15};
     int target1 = 9;
@@ -70,4 +76,9 @@ int main(){
     int target3 = 6;
     std::vector<int> result_index3 = solution.twoSum(nums3, target3);
     solution.info(result_index3);
+
+    std::vector<int> nums4 = {4, 3};
+    int target4 = 6;
+    std::vector<int> result_index4 = solution.twoSum(nums4, target4);
+    solution.info(result_index4);
 }
