@@ -6,29 +6,13 @@
 class Solution {
 public:
     bool isAnagram(std::string s, std::string t) {
-        std::vector<char> vector_s(s.begin(), s.end()); 
-        std::vector<char> vector_t(t.begin(), t.end());
-        // info(vector_s);
+        // std::sort can be used to sort a string, an array or a vector 
+        std::sort(s.begin(), s.end());
+        // std::cout << s << std::endl;
+        std::sort(t.begin(), t.end());
+        // std::cout << t << std::endl;
 
-        if (vector_s.size() != vector_t.size())
-        {
-            return false;
-        }
-
-        std::sort(vector_s.begin(), vector_s.end());
-        // info(vector_s);
-        std::sort(vector_t.begin(), vector_t.end());
-        // info(vector_t);
-
-        for (auto i = 0; i < vector_s.size(); ++i)
-        {
-            if (vector_s[i] != vector_t[i])
-            {
-                return false;
-            }
-        }
-        
-        return true;
+        return s == t;
     }
 };
 

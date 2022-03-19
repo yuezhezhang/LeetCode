@@ -5,6 +5,7 @@
 template <typename T>
 void info(std::vector<T> vector)
 {   
+    // We cannot use std::cout to display the contents of a vector
     int length = vector.size();
     if (length == 0) 
     {
