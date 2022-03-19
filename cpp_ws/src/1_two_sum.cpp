@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <exception>
+#include "helper.cpp" 
 #include <unordered_map>
 
 
@@ -91,18 +89,6 @@ public:
     }
 };
 
-
-void info(std::vector<int> result_index)
-{   
-    int length = result_index.size();
-    if (length > 1)
-    {
-        std::cout << "The vector is: [";
-        for (auto i = 0; i < length - 1; ++i)
-            std::cout << result_index[i] << ", ";
-        std::cout << result_index[length-1] << "]" << std::endl;
-    }
-}
 
 
 int main(){

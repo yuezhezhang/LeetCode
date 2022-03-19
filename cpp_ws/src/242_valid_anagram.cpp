@@ -1,17 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include "helper.cpp"
 #include <unordered_map>
 #include <algorithm>
-
-void info(std::vector<char> result_vector)
-{   
-    int length = result_vector.size();
-    std::cout << "The vector is: [";
-    for (auto i = 0; i < length - 1; ++i)
-        std::cout << result_vector[i] << ", ";
-    std::cout << result_vector[length-1] << "]" << std::endl;
-}
 
 
 class Solution {
