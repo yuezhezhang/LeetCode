@@ -7,11 +7,16 @@ class Solution(object):
         """
         # list.sort() returns the list in place, it does not return a new list
         # answer = sorted(list) will return a new list
-        list_s = list(s)
-        list_s.sort()
-        list_t = list(t)  
-        list_t.sort()
-        return list_s == list_t 
+
+        # The sorted() function returns a sorted list of the specified iterable object.
+
+        # Iterable object, can iterate via for loop, including sequential and non-sequential
+        # sequential: lists, tuples, and strings
+        # non-sequential: dicts, sets
+        # non-iterable: such as int object
+
+        # Functions that act on iterables: sorted, max, min, any, all
+        return sorted(s) == sorted(t) 
 
 
 if __name__ == "__main__":
