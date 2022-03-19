@@ -26,6 +26,6 @@ What if the inputs contain Unicode characters? How would you adapt your solution
 
 ## Solution 
 ### C++
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/242_valid_anagram.cpp)
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/0242_valid_anagram.cpp)
 ### Python
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/242_valid_anagram.py) 
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/0242_valid_anagram.py) 

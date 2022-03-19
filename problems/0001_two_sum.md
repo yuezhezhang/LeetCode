@@ -34,9 +34,9 @@ Output: [0,1]
 
 ## Solution 
 ### C++
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/1_two_sum.cpp)
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/0001_two_sum.cpp)
 ### Python
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/1_two_sum.py) 
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/0001_two_sum.py) 
 
 
 

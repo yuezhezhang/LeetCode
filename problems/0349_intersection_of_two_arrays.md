@@ -23,9 +23,9 @@ Explanation: [4,9] is also accepted.
 
 ## Solution 
 ### C++
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/349_intersection_of_two_arrays.cpp)
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/cpp_ws/src/0349_intersection_of_two_arrays.cpp)
 ### Python
-The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/349_intersection_of_two_arrays.py) 
+The code can be found [here](https://github.com/yuezhezhang/LeetCode/blob/main/python_ws/0349_intersection_of_two_arrays.py) 
 
 
 
