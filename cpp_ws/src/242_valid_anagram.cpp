@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <algorithm>
 
-
+// This solution uses std::sort function
 class Solution {
 public:
     bool isAnagram(std::string s, std::string t) {
@@ -17,44 +17,33 @@ public:
 };
 
 
+// This solution uses two maps containing the frequencies of every character and compare them
 class Solution2 {
 public:
     bool isAnagram(std::string s, std::string t) {
-        std::vector<char> vector_s(s.begin(), s.end()); 
-        std::vector<char> vector_t(t.begin(), t.end());
-        // info(vector_s);
-
-        if (vector_s.size() != vector_t.size())
+        if (s.size() != t.size())
         {
             return false;
         }
 
-        // this approach is not working 
+        // the map should store the frequencies of every character
         std::unordered_map<char, int> map_s;
         std::unordered_map<char, int> map_t;
 
-        for (auto i = 0; i < vector_s.size(); ++i)
+        for (auto i = 0; i < s.size(); ++i)
         {
-            map_s.insert({vector_s[i], i});
-            map_t.insert({vector_t[i], i});
+            ++map_s[s[i]];
+            ++map_t[t[i]];
         }
-        for (auto it=map_t.begin(); it!=map_t.end(); ++it)
-            std::cout << it->first << " => " << it->second << '\n';
-        for (auto i = 0; i < vector_s.size(); ++i)
+        
+        // for (auto it=map_t.begin(); it!=map_t.end(); ++it)
+        //     std::cout << it->first << " => " << it->second << '\n';
+
+        for (auto i = 0; i < s.size(); ++i)
         {
-            // there may exist conflicting
-            auto iter = map_t.find(vector_s[i]);
-            std::cout << i << " " ;
-            if (iter == map_t.end())
+            if (map_s[s[i]] != map_t[s[i]])
             {
                 return false;
-            }
-            else
-            {   
-                std::cout << iter->first << std::endl;
-                map_t.erase(iter);
-                for (auto it=map_t.begin(); it!=map_t.end(); ++it)
-                    std::cout << it->first << " => " << it->second << '\n';
             }
         }
         
@@ -64,7 +53,7 @@ public:
 
 
 int main(){
-    Solution solution;
+    Solution2 solution;
 
     std::string s1 = "anagram";
     std::string t1 = "nagaram";
