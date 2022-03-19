@@ -11,12 +11,9 @@ public:
         if (length <= 1) throw "The input does not meet the requirement";
 
         // start iteration
-        for (auto i = 0; i < length; ++i)
-        {
-            for (auto j = i+1; j < length; ++j)
-            {
-                if (nums[i] + nums[j] == target)
-                {   
+        for (auto i = 0; i < length; ++i) {
+            for (auto j = i+1; j < length; ++j) {
+                if (nums[i] + nums[j] == target) {   
                     return {i, j};
                 }
             } 
@@ -40,11 +37,9 @@ public:
         std::unordered_map<int, int> map;
 
         // start iteration
-        for (auto i = 0; i < length; ++i)
-        {
+        for (auto i = 0; i < length; ++i) {
             auto iter = map.find(target - nums[i]);
-            if (iter != map.end())
-            {
+            if (iter != map.end()) {
                 // std::cout << iter->second << std::endl;
                 return {iter->second, i};
             }
@@ -67,17 +62,14 @@ public:
         if (length <= 1) throw "The input does not meet the requirement";
 
         std::unordered_map<int, int> map;
-        for (auto i = 0; i < length; ++i)
-        {
+        for (auto i = 0; i < length; ++i) {
             map.insert({nums[i], i});
         }
 
         // start iteration
-        for (auto i = 0; i < length; ++i)
-        {
+        for (auto i = 0; i < length; ++i) {
             auto iter = map.find(target - nums[i]);
-            if ((iter != map.end()) && (iter->second != i))
-            {
+            if ((iter != map.end()) && (iter->second != i)) {
                 // std::cout << iter->second << std::endl;
                 return {iter->second, i};
             }
@@ -96,12 +88,10 @@ int main(){
 
     std::vector<int> nums0 = {2};
     int target0 = 7;
-    try
-    {
+    try {
         std::vector<int> result_index0 = solution.twoSum(nums0, target0);
     }
-    catch (const char* msg)
-    {
+    catch (const char* msg) {
         std::cerr<< msg << std::endl;
     }
 
