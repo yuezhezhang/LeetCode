@@ -1,6 +1,7 @@
 #include "helper.cpp"
 #include <unordered_map>
 #include <algorithm>
+#include <unordered_set>
 
 // time: 4ms, beat 88.56%
 // RAM: 10.2MB, beat 57.01%
@@ -54,6 +55,7 @@ public:
 
 // time: 4ms, beat 88.58%
 // RAM: 9.6MB, beat 95.61%
+// use std::set_intersection, efficient in memory
 class Solution3 {
 public:
     std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
@@ -74,8 +76,27 @@ public:
 };
 
 
+// time: 0ms, beat 100%
+// RAM: 10.3MB, beat 32.38%
+// use unordered_set, which is space demanding and sometimes slower than array
+class Solution4 {
+public:
+    std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
+        std::unordered_set<int> result_set; 
+        std::unordered_set<int> nums1_set(nums1.begin(), nums1.end());
+        for (int num : nums2) {
+            // find element in nums2 which also appears in nums1_set
+            if (nums1_set.find(num) != nums1_set.end()) {
+                result_set.insert(num);
+            }
+        }
+        return std::vector<int>(result_set.begin(), result_set.end());
+    }
+};
+
+
 int main(){
-    Solution3 solution;
+    Solution4 solution;
 
     std::vector<int> nums1 = {1, 2, 2, 1};
     std::vector<int> nums2 = {2, 2};
