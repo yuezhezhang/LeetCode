@@ -46,7 +46,9 @@ std::vector<char> vector_word(word.begin(), word.end());
 * `string::operator+=`: append additional characters at the end of its current value:
 * `string::append`: append strings or consecutive chars at the end.
 * `string::push_back`: append a **char** to the end of the string.
+* `string::pop_back`: delete last character.
 * `string::erase`: erase part of the string using **position** or **iterator**.
+* `string::empty`: test if string is empty.
 * `string::find`: find **content** in string. Searches the string for the first occurrence of the sequence specified by its arguments. Return the position of the first character of the first match. If no matches were found, the function returns `string::npos`. When `pos` is specified, the search only includes characters at or after position `pos`, ignoring any possible occurrences before `pos`.
     ```
     std::string str ("There are two needles in this haystack with needles.");
