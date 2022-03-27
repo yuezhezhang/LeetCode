@@ -1,11 +1,11 @@
 # String and char
-## Change a string to a vector of chars:
+## [Convert a string to a vector of chars](https://www.techiedelight.com/convert-string-vector-chars-cpp/)
 ```
 std::string word = "hello";
 std::vector<char> vector_word(word.begin(), word.end()); 
 ```
 
-## Change a char to a string vector:
+## [Convert a char to a string](https://www.techiedelight.com/convert-char-to-string-cpp/)
 * Use std::string constructor. The constructor `std::string s(size_t n, char c)`,  which fills the string `s` with `n` copies of character `c`.
     ```
     char c = 'A';
