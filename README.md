@@ -12,5 +12,5 @@
 [1. String and Char](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/1_string_and_char.md)\
 [2. Vector](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/2_vector.md)\
 [3. Set](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/3_set.md)\
-[4. Map](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/4_map.md)
+[4. Map](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/4_map.md)\
 [5. Algorithms Library](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/5_algorithms_library.md)
