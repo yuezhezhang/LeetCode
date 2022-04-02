@@ -13,3 +13,83 @@ The mapped values in a map can be accessed directly by their corresponding key u
 * Unique keys: No two elements in the container can have equivalent keys.
 * Orderd: The elements in the container follow a strict order at all times. All inserted elements are given a position in this order.
 * For std::unordered_map, the unordered containers organize their elements using hash tables that allow for fast access to elements by their key.
+
+## Functions
+* map::begin\end: return iterator to begining ot end.
+    ```
+    std::map<char,int> mymap;
+
+    mymap['b'] = 100;
+    mymap['a'] = 200;
+    mymap['c'] = 300;
+
+    // show content:
+    for (std::map<char,int>::iterator it=mymap.begin(); it!=mymap.end(); ++it)
+        std::cout << it->first << " => " << it->second << '\n';
+
+    // output
+    a => 200
+    b => 100
+    c => 300
+    ```
+* map::find:  
+  `iterator find (const key_type& k);`
+
+  search the container for an element with a `key` equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.
+  ```
+  std::map<char,int> mymap;
+  std::map<char,int>::iterator it;
+
+  mymap['a']=50;
+  mymap['b']=100;
+  mymap['c']=150;
+  mymap['d']=200;
+
+  it = mymap.find('b');
+  if (it != mymap.end())
+    mymap.erase (it);
+
+  // print content:
+  std::cout << "elements in mymap:" << '\n';
+  std::cout << "a => " << mymap.find('a')->second << '\n';
+  std::cout << "c => " << mymap.find('c')->second << '\n';
+  std::cout << "d => " << mymap.find('d')->second << '\n';
+
+  // output
+  elements in mymap:
+  a => 50
+  c => 150
+  d => 200
+  ```
+* map::count
+
+   `size_type count (const key_type& k) const;`
+    
+    Count elements with a specific key and return the number of matches.
+
+    ```
+    std::map<char,int> mymap;
+    char c;
+
+    mymap ['a']=101;
+    mymap ['c']=202;
+    mymap ['f']=303;
+
+    for (c='a'; c<'h'; c++)
+    {
+        std::cout << c;
+        if (mymap.count(c)>0)
+        std::cout << " is an element of mymap.\n";
+        else 
+        std::cout << " is not an element of mymap.\n";
+    }
+    
+    // output
+    a is an element of mymap.
+    b is not an element of mymap.
+    c is an element of mymap.
+    d is not an element of mymap.
+    e is not an element of mymap.
+    f is an element of mymap.
+    g is not an element of mymap.
+    ```
