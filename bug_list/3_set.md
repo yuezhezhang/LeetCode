@@ -45,3 +45,19 @@ iterator.
   }
   // output: Found 2
   ```
+
+## [How to convert a vector to set](https://www.geeksforgeeks.org/how-to-convert-a-vector-to-set-in-c/)
+* Using range converter. At first get the vector, and then define a set which copies all elements of the vector using 2 iterators begin and end.
+    ```
+    std::vector<int> vec = { 1, 2, 3, 1, 1 };
+
+    std::set<int> s(vec.begin(), vec.end());
+
+    std::cout << "Set: ";
+    for (int x : s) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    // output 1 2 3
+    ```
