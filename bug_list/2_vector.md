@@ -37,20 +37,20 @@ Vectors are sequence containers representing arrays that can change in size.
 
 vector remove can delete all the elments with sam value
 
-[Efficient ways to erase duplicates and sort a vector](https://stackoverflow.com/questions/1041620/whats-the-most-efficient-way-to-erase-duplicates-and-sort-a-vector)
+## [Efficient ways to erase duplicates and sort a vector](https://stackoverflow.com/questions/1041620/whats-the-most-efficient-way-to-erase-duplicates-and-sort-a-vector)
 * Just using vector, sort + unique (`std::unique` only removes duplicate elements if they're neighbours: you have to sort the vector first before it will work as you intend.)
   ```
   std::sort( vec.begin(), vec.end() );
   vec.erase( unique( vec.begin(), vec.end() ), vec.end() );
   ```
-* Convert to set(manually)
+* Convert to set (manually)
   ```
   std::set<int> s;
   unsigned size = vec.size();
   for( unsigned i = 0; i < size; ++i ) s.insert( vec[i] );
   vec.assign( s.begin(), s.end() );
   ```
-* Convert to set(using constructor)
+* Convert to set (using constructor)
   ```
   std::set<int> s( vec.begin(), vec.end() );
   vec.assign( s.begin(), s.end() );
