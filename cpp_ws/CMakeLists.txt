@@ -15,3 +15,4 @@ add_executable(0349_intersection_of_two_arrays src/0349_intersection_of_two_arra
 add_executable(1002_find_common_characters src/1002_find_common_characters.cpp)
 add_executable(0202_happy_number src/0202_happy_number.cpp)
 add_executable(0454_4_sum_2 src/0454_4_sum_2.cpp)
+add_executable(0383_ransom_note src/0383_ransom_note.cpp)
