@@ -129,3 +129,84 @@ The mapped values in a map can be accessed directly by their corresponding key u
   a => 10
   d => 40
   ```
+## [Vector of maps](https://www.geeksforgeeks.org/vector-of-maps-in-c-with-examples/)
+It can be used to store the frequencies of different characters in a string.
+
+Syntax:
+* Vector of Ordered Map:
+  ```
+  vector<map<datatype, datatype> > VM;
+  ```
+* Vector of Unordered map:
+  ```
+  vector<unordered_map<datatype, datatype> > VUM;
+  ```
+Code:
+```
+// C++ program to demonstrate the use
+// of vector of maps
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to count frequency
+// up to each index
+void findOccurences(string s)
+{
+	// Vector of map
+	vector<map<char, int> > mp(s.length());
+
+	// Traverse the string s
+	for (int i = 0; i < s.length(); i++) {
+
+		// Update the frequency
+		for (int j = 0; j <= i; j++) {
+			mp[i][s[j]]++;
+		}
+	}
+
+	// Print the vector of map
+	for (int i = 0; i < s.length(); i++) {
+
+		cout << "Frequency upto "
+			<< "position " << i + 1
+			<< endl;
+
+		// Traverse the map
+		for (auto x : mp[i])
+			cout << x.first << "-"
+				<< x.second << endl;
+	}
+}
+
+// Driver Code
+int main()
+{
+	// Input string S
+	string S = "geeks";
+
+	// Function Call
+	findOccurences(S);
+
+	return 0;
+}
+```
+Output:
+```
+Frequency upto position 1
+g-1
+Frequency upto position 2
+e-1
+g-1
+Frequency upto position 3
+e-2
+g-1
+Frequency upto position 4
+e-2
+g-1
+k-1
+Frequency upto position 5
+e-2
+g-1
+k-1
+s-1
+```
