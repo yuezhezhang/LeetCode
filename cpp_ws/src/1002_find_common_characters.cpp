@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <map>
+#include <set>
 
 // time: 48ms, beat 5.9%
 // RAM: 13.3MB, beat 5.08%
@@ -127,8 +128,50 @@ public:
     }
 };
 
+// time: 24ms, beat 5.79%
+// RAM: 11.8MB, beat 5.02%
+
+class Solution3 {
+public:
+    std::vector<std::string> commonChars(std::vector<std::string>& words) {
+        std::vector<std::string> result_str;
+        // initialize the vector with size, not using square bracket
+        std::vector<std::map<char, int> > dict_vector(words.size());   
+        // assign every map to every word which contains frequencies of every character
+        for (auto i = 0; i < words.size(); i++){
+            for (char cha : words[i]){  // cannot std::string 
+                dict_vector[i][cha]++;
+            }
+        }
+
+        // change the first string to set  
+        std::set<char> s(words[0].begin(), words[0].end());
+        // choose the lowest frequency for each char
+        for (char cha : s){
+            int min_num = 100;
+            for (auto i = 0; i < words.size(); i++){
+                if (dict_vector[i][cha] < min_num){
+                    min_num = dict_vector[i][cha];
+                }
+            }
+            if (min_num != 0){
+                // convert the char to string
+                std::string s;
+                s.push_back(cha);
+                for (auto i = 0; i < min_num; i++){
+                    result_str.push_back(s);
+                }
+            }
+
+        }
+    
+        return result_str;
+    }
+};
+
+
 int main(){
-    Solution2 solution;
+    Solution3 solution;
 
     std::vector<std::string> words1 = {"bella","label","roller"};
     info(solution.commonChars(words1));
