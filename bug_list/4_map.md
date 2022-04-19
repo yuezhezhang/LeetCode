@@ -210,3 +210,13 @@ g-1
 k-1
 s-1
 ```
+
+## Some Tips
+*  If a key does not exist in a map, it will return 0 using bracket, and there is no error.
+    ```
+    std::map<char,int> mymap;
+    mymap['b'] = 100;
+    std::cout << mymap['c'] << std::endl; 
+
+    // output: 0
+    ```
