@@ -1,4 +1,4 @@
-# Set
+# [Set](https://en.cppreference.com/w/cpp/container/set)
 Sets are a type of associative containers in which each element has to be unique because the value of the element identifies it. The values are stored in a specific order. 
 
 Search, removal, and insertion operations have logarithmic complexity. Sets are usually implemented as red-black trees.
@@ -45,6 +45,7 @@ iterator.
   }
   // output: Found 2
   ```
+* std::set has no member function `push_back`, but `insert`.
 
 ## [How to convert a vector to set](https://www.geeksforgeeks.org/how-to-convert-a-vector-to-set-in-c/)
 * Using range converter. Get the vector, and then define a set which copies all elements of the vector using 2 iterators begin and end.
