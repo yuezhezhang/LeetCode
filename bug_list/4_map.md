@@ -121,9 +121,14 @@ The mapped values in a map can be accessed directly by their corresponding key u
   it=mymap.find ('e');
   mymap.erase ( it, mymap.end() );    // erasing by range
 
-  // show content:
-  for (it=mymap.begin(); it!=mymap.end(); ++it)
+  // show contents:
+  for (auto it=mymap.begin(); it!=mymap.end(); ++it)
     std::cout << it->first << " => " << it->second << '\n';
+
+  
+  for(const auto& elem : mymap){
+      std::cout << elem.first << " => " << elem.second << "\n";
+  }
 
   // output
   a => 10
