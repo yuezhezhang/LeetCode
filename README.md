@@ -8,7 +8,8 @@
 [202. Happy Number](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0202_happy_number.md) **-- easy**\
 [454. 4 Sum 2](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0454_4_sum_2.md) **-- medium**\
 [383. Ransom Note](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0383_ransom_note.md) **-- easy**\
-[15. 3 Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0015_3_sum.md) **-- medium**
+[15. 3 Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0015_3_sum.md) **-- medium**\
+[18. 4 Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0018_4_sum.md) **-- medium**
 
 # Bug List
 [1. String and Char](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/1_string_and_char.md)\
