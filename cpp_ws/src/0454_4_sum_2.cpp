@@ -1,6 +1,8 @@
 #include "helper.cpp" 
 #include "map"
 
+// time: 372ms, beat 5.07%
+// RAM: 24.2MB, beat 9.98%
 class Solution {
 public:
     int fourSumCount(std::vector<int>& nums1, std::vector<int>& nums2, std::vector<int>& nums3, std::vector<int>& nums4) {
