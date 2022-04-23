@@ -23,9 +23,34 @@ class Solution(object):
             square_sum += (n%10)**2 
             n = int (n/10)
         return square_sum
+
+# time: 16ms, beat 93.79%
+# RAM: 12.8MB, beat 63.52%
+class Solution2(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        fast = n
+        slow = n
+        while True:
+            slow = self.sum_square_digit(slow)
+            fast = self.sum_square_digit(fast)
+            fast = self.sum_square_digit(fast)
+            if (slow == fast):
+                break
+        return slow == 1
+
+    def sum_square_digit(self, n):
+        square_sum = 0
+        while  n != 0 :
+            square_sum += (n%10)**2 
+            n = int (n/10)
+        return square_sum
     
 if __name__ == "__main__":
-    solution = Solution()
+    solution = Solution2()
 
     print(solution.isHappy(2)) # False
 
