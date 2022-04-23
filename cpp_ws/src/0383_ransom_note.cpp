@@ -14,8 +14,27 @@ public:
     }
 };
 
+// time: 260ms, beat 5.12%
+// RAM: 8.5MB, beat 68.17%
+class Solution2 {
+public:
+    bool canConstruct(std::string ransomNote, std::string magazine){
+        int hash[26] = {0}; // use array with size 26 to represent hash table
+        std::cout << hash[0] << std::endl;
+        for(char i : magazine){
+            hash[i-'a'] += 1;
+        }
+        for(char j : ransomNote ){
+            hash[j-'a'] -= 1;
+            if(hash[j-'a'] < 0)
+                return false;
+        }
+        return true;
+    }
+};
+
 int main(){
-    Solution solution;
+    Solution2 solution;
 
     std::string ransomNote1 = "a";
     std::string magazine1 = "b";
