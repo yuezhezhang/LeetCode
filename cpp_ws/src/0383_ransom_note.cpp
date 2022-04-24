@@ -14,8 +14,8 @@ public:
     }
 };
 
-// time: 260ms, beat 5.12%
-// RAM: 8.5MB, beat 68.17%
+// time: 8ms, beat 91.7%
+// RAM: 8.6MB, beat 56.62%
 class Solution2 {
 public:
     bool canConstruct(std::string ransomNote, std::string magazine){

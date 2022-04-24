@@ -1,5 +1,8 @@
 # LeetCode
 
+## Array 
+[0704. Binary Search](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0704_binary_search.md) **-- easy**
+
 ## Hash Table
 [0001. Two Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0001_two_sum.md) **-- easy**\
 [0242. Valid Anagram](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0242_valid_anagram.md) **-- easy**\

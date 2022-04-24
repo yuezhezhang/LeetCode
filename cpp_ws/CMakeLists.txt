@@ -18,3 +18,5 @@ add_executable(0454_4_sum_2 src/0454_4_sum_2.cpp)
 add_executable(0383_ransom_note src/0383_ransom_note.cpp)
 add_executable(0015_3_sum src/0015_3_sum.cpp)
 add_executable(0018_4_sum src/0018_4_sum.cpp)
+
+add_executable(0704_binary_search src/0704_binary_search.cpp)
