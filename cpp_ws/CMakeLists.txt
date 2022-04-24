@@ -20,3 +20,4 @@ add_executable(0015_3_sum src/0015_3_sum.cpp)
 add_executable(0018_4_sum src/0018_4_sum.cpp)
 
 add_executable(0704_binary_search src/0704_binary_search.cpp)
+add_executable(0027_remove_element src/0027_remove_element.cpp)

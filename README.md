@@ -1,7 +1,8 @@
 # LeetCode
 
 ## Array 
-[0704. Binary Search](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0704_binary_search.md) **-- easy**
+[0704. Binary Search](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0704_binary_search.md) **-- easy**\
+[0027. Remove Element](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0027_remove_element.md) **-- easy**
 
 ## Hash Table
 [0001. Two Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0001_two_sum.md) **-- easy**\
