@@ -25,6 +25,35 @@ class Solution(object):
                 visited_list.append(i)
         return i
 
+# time: 28ms beat 45.96%
+# RAM: 13.9MB beat 49.86% 
+class Solution2(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left = 0
+        right = len(nums)
+        i = int((left+right)/2)
+        # check if on target before entering the loop
+        if nums[i] == target:
+            return i
+        # nums[i] != target: use this as condition will loop forever if no solution found 
+        while right - left > 1: #left + 1 != right:
+            if nums[i] > target:
+                right = i
+            elif nums[i] < target:
+                left = i
+            else:
+                return i
+            i = int((left+right)/2)
+            # check after the assignment, in case it will not enter the loop
+            if nums[i] == target:
+                return i
+        return -1
+
 
 if __name__ == "__main__":
     solution = Solution()
