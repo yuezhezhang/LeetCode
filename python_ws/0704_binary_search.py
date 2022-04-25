@@ -11,7 +11,6 @@ class Solution(object):
         left = 0
         right = len(nums)
         i = int((left+right)/2)
-        # check if on target before entering the loop
         visited_list = [i]
         while nums[i] != target:
             if nums[i] > target:
@@ -54,9 +53,30 @@ class Solution2(object):
                 return i
         return -1
 
+# time: 20ms beat 93.65%%
+# RAM: 13.8MB beat 83.13% 
+class Solution3(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left = 0
+        right = len(nums)
+        i = int((left+right)/2)
+        while nums[i] != target:
+            if right == left + 1: # it will loop forever
+                return -1
+            if nums[i] > target:
+                right = i
+            elif nums[i] < target:
+                left = i
+            i = int((left+right)/2)
+        return i
 
 if __name__ == "__main__":
-    solution = Solution()
+    solution = Solution3()
 
     nums = [-1,0,3,5,9,12]
     target = 9
