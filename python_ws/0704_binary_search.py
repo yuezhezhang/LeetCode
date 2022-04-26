@@ -75,8 +75,35 @@ class Solution3(object):
             i = int((left+right)/2)
         return i
 
+# To use the binary search, the array has to be in an order and has unique values.
+# When developing the algorithms, we should pay special attention to the boundary checking.
+
+# One way to deal with it is to assume target belongs to [left, right], so we should notice:
+#### while (left<=right), the equality makes sense here.
+#### if (nums[i]>target), then right has to be assigned by i-1, because nums[i] cannot be target
+# time: 28ms beat 45.98%%
+# RAM: 13.9MB beat 57.24% 
+class Solution4(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            i = (left + right) // 2
+            if nums[i] < target:
+                left = i + 1
+            elif nums[i] > target:
+                right = i - 1
+            else:
+                return i
+        return -1
+        
+
 if __name__ == "__main__":
-    solution = Solution3()
+    solution = Solution4()
 
     nums = [-1,0,3,5,9,12]
     target = 9
