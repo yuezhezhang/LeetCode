@@ -100,10 +100,33 @@ class Solution4(object):
             else:
                 return i
         return -1
-        
+
+# Another way to deal with it is to assume target belongs to [left, right), so we should notice:
+#### while (left<right), the equality does not make sense here.
+#### if (nums[i]>target), then right has to be assigned by i
+# time: 20ms beat 93.68%%
+# RAM: 14MB beat 34.89% 
+class Solution5(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left, right = 0, len(nums)
+        while left < right:
+            i = (left + right) // 2
+            if nums[i] < target:
+                left = i + 1
+            elif nums[i] > target:
+                right = i
+            else:
+                return i
+        return -1
+
 
 if __name__ == "__main__":
-    solution = Solution4()
+    solution = Solution5()
 
     nums = [-1,0,3,5,9,12]
     target = 9
