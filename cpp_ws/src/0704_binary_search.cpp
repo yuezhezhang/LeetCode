@@ -21,9 +21,30 @@ public:
     }
 };
 
+// time: 20ms, beat 93.89%
+// RAM: 27MB, beat 6.1%
+// target belongs to [left, right]
+class Solution2 {
+public:
+    int search(std::vector<int>& nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
+        while (left <= right){
+            int i = left + (right - left)/2;
+            if (nums[i] < target)
+                left = i + 1;
+            else if (nums[i] > target)
+                right = i - 1;
+            else
+                return i;
+        }
+        return -1;
+    }
+};
+
 
 int main(){
-    Solution solution;
+    Solution2 solution;
 
     std::vector<int> nums1 = {-1,0,3,5,9,12};
     int target1 = 9;
@@ -60,6 +81,4 @@ int main(){
     std::vector<int> nums9 = {-1,0,3,5,9,12};
     int target9 = 3;
     std::cout << solution.search(nums9, target9) << std::endl; // 2
-
-    
 }
