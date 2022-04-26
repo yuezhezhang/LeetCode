@@ -92,7 +92,7 @@ class Solution4(object):
         """
         left, right = 0, len(nums) - 1
         while left <= right:
-            i = (left + right) // 2
+            i = left + (right - left) // 2
             if nums[i] < target:
                 left = i + 1
             elif nums[i] > target:
@@ -115,7 +115,7 @@ class Solution5(object):
         """
         left, right = 0, len(nums)
         while left < right:
-            i = (left + right) // 2
+            i = left + (right - left) // 2
             if nums[i] < target:
                 left = i + 1
             elif nums[i] > target:
