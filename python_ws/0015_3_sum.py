@@ -1,3 +1,4 @@
+# exceeds the time limit
 class Solution(object):
     def threeSum(self, nums):
         """
@@ -34,9 +35,30 @@ class Solution(object):
                                     result_list.append(result)
             return result_list
 
+# still exceeds the time limit
+class Solution2(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if len(nums) < 3:
+            return []
+        else:
+            result_list = []
+            for i in range(len(nums)):
+                for j in range(i+1, len(nums)):
+                    for k in range(j+1, len(nums)):
+                        if nums[i]+nums[j]+nums[k] == 0:
+                            # avoid duplicate
+                            result = [nums[i], nums[j], nums[k]]
+                            result.sort()
+                            if result not in result_list:
+                                result_list.append(result)
+            return result_list
 
 if __name__ == "__main__":
-    solution = Solution()
+    solution = Solution2()
 
     nums = [-1,0,1,2,-1,-4]
     print(solution.threeSum(nums)) # [[-1,-1,2],[-1,0,1]]
