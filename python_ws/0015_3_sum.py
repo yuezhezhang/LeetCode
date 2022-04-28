@@ -57,8 +57,30 @@ class Solution2(object):
                                 result_list.append(result)
             return result_list
 
+class Solution3(object):
+    def threeSum(self, nums):
+        if len(nums) < 3:
+            return []
+        else:
+            nums.sort()
+            result_list = []
+            for i in range(1, len(nums)-1):
+                left = 0
+                right = len(nums)-1
+                total = nums[left] + nums[i] + nums[right]
+                if total > 0:
+                    right -= 1
+                elif total < 0:
+                    left += 1
+                else:
+                    # avoid duplicate
+                    result = [nums[left], nums[i], nums[right]]
+                    if result not in result_list:
+                        result_list.append(result)
+            return result_list
+            
 if __name__ == "__main__":
-    solution = Solution2()
+    solution = Solution3()
 
     nums = [-1,0,1,2,-1,-4]
     print(solution.threeSum(nums)) # [[-1,-1,2],[-1,0,1]]
