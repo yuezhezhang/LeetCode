@@ -15,7 +15,7 @@
 [0015. 3 Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0015_3_sum.md) **-- medium**\
 [0018. 4 Sum](https://github.com/yuezhezhang/LeetCode/blob/main/problems/0018_4_sum.md) **-- medium**
 
-# Bug List
+# CPP Bug List
 [1. String and Char](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/1_string_and_char.md)\
 [2. Vector](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/2_vector.md)\
 [3. Set](https://github.com/yuezhezhang/LeetCode/blob/main/bug_list/3_set.md)\
