@@ -58,7 +58,49 @@ int addOne(int* a)    // address of variable a
 ```
 `void function(int* data)`
 * Function receives the address where data is stored in memory
-* The address is passed by value, so you cannot change the address but you can change the dereferenced data behind it 
+* The address is passed by value, so you cannot change the address but you can change th#include <iostream>
+
+using namespace std;
+
+class Vehicle {
+  public:
+    int age;
+    Vehicle(int age): age(age){};
+    void PrintAge(){
+        cout<<age<<endl;
+    };
+};
+
+class Honda : public Vehicle{
+    public:
+        Honda(int age) : Vehicle(age){};
+};
+
+// Honda::Honda(int age) : Vehicle(age){};
+class NewHonda : public Honda{
+    public:
+        NewHonda(int age);
+        // NewHonda(int age) : Honda(age){};
+};
+
+NewHonda::NewHonda(int age) : Honda(age){};
+
+int main()
+{
+    cout<<"Hello World"<<endl;
+    
+    Vehicle vehicle(8);
+    vehicle.PrintAge();
+    
+    Honda honda(9);
+    honda.PrintAge();
+    
+    NewHonda newhonda(12);
+    newhonda.PrintAge();
+
+    return 0;
+}
+e dereferenced data behind it 
 * No copy of `data` is created (better performance for large data)
 * Modifications of `data` inside the function have effect outside
 * To prevent modifications of `data` but still enable efficient passing of arguments use `void function(const int* data)`
@@ -75,3 +117,50 @@ int addOne(int* a)    // address of variable a
     int array[5] = {1, 2, 3, 4, 5};
     std::cout << sum(array, 5) >> std::endl;
     ```
+## Inheritance
+### Constructor
+```
+#include <iostream>
+
+using namespace std;
+
+class Vehicle {
+  public:
+    int age;
+    Vehicle(int age): age(age){};
+    void PrintAge(){
+        cout<<age<<endl;
+    };
+};
+
+class Honda : public Vehicle{
+    public:
+        Honda(int age) : Vehicle(age){};
+};
+
+// Honda::Honda(int age) : Vehicle(age){};
+class NewHonda : public Honda{
+    public:
+        NewHonda(int age);
+        // NewHonda(int age) : Honda(age){};
+};
+
+NewHonda::NewHonda(int age) : Honda(age){};
+
+int main()
+{
+    cout<<"Hello World"<<endl;
+    
+    Vehicle vehicle(8);
+    vehicle.PrintAge();
+    
+    Honda honda(9);
+    honda.PrintAge();
+    
+    NewHonda newhonda(12);
+    newhonda.PrintAge();
+
+    return 0;
+}
+
+```
