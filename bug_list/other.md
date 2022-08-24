@@ -4,3 +4,8 @@
   int current_angle = 10;
   current_angle = (current_angle >= 180) ? current_angle - 360 : (current_angle < -180) ? current_angle + 360 : current_angle;
   ```
+## [Random float number generation](https://stackoverflow.com/questions/686353/random-float-number-generation)
+  Generate a number from 0.0 to 1.0
+  ```
+  float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+  ```
