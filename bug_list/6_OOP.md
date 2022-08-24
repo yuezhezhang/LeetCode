@@ -164,3 +164,22 @@ int main()
 }
 
 ```
+    
+## Class
+### Initialization of data members in the class
+* We can initialize the data members at the point of declaration , but not with `()` brackets
+ ```
+class Foo {
+    vector<string> name = vector<string>(5);
+    vector<int> val{vector<int>(5,0)};
+};
+ ```
+* or declare them first and initialize them later e.g. in a constructor
+```
+class Foo {
+    vector<string> name;
+    vector<int> val;
+ public:
+    Foo() : name(5), val(5,0) {}
+};
+```
