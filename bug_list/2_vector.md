@@ -56,3 +56,6 @@ vector remove can delete all the elments with sam value
   vec.assign( s.begin(), s.end() );
   ```
 * **Summary**: when the number of duplicates is large enough, it's actually faster to convert to a set and then dump the data back into a vector. And for some reason, doing the set conversion manually seems to be faster than using the set constructor.
+
+## [Initializing the size of a vector](https://stackoverflow.com/questions/25108854/initializing-the-size-of-a-c-vector)
+* Push back will result in reaallocations, including memory allocation, elements move and memory deallocation, especially when the size is very large.
