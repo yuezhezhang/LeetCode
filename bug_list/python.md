@@ -20,6 +20,15 @@ reverse_str = string[::-1]
 upp_str = string.upper()
 ```
 
+## List and Array
+```
+# Print elements in a list in one row
+a = [1, 2, 3, 4]
+print(*a) # 1 2 3 4
+# Print lists separated by commas
+print(*a, sep = ", ")
+```
+
 ## Regular Expression
 * See [docs](https://docs.python.org/zh-cn/3/library/re.html#regular-expression-objects) and [this](https://www.runoob.com/python/python-reg-expressions.html)
 * To check a character within range：
