@@ -27,6 +27,8 @@ a = [1, 2, 3, 4]
 print(*a) # 1 2 3 4
 # Print lists separated by commas
 print(*a, sep = ", ")
+# Print lists in different rows
+print(*a, sep='\n')
 ```
 
 ## Regular Expression
@@ -40,6 +42,15 @@ print(*a, sep = ", ")
 
 ## Algorithms
 * Sorting algorithm, see [docs](https://www.runoob.com/w3cnote/ten-sorting-algorithm.html)
+  ```
+  students = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+  sorted(students, key=lambda s: s[2])            # 按年龄排序
+  # [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+     
+  sorted(students, key=lambda s: s[2], reverse=True)       # 按降序
+  # [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+  ```
+* Bubble sort
   ```
   new_str = sorted(string) # return a list
 
