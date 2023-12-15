@@ -25,6 +25,8 @@ upp_str = string.upper()
 # Print elements in a list in one row
 a = [1, 2, 3, 4]
 print(*a) # 1 2 3 4
+for i in a:
+    print(i, end=" ")
 # Print lists separated by commas
 print(*a, sep = ", ")
 # Print lists in different rows
