@@ -31,6 +31,9 @@ for i in a:
 print(*a, sep = ", ")
 # Print lists in different rows
 print(*a, sep='\n')
+# Change a list of strings to ints
+a = ['1', '2', '4']
+list(map(int, a))  # [1, 2, 4]
 ```
 
 ## Regular Expression
