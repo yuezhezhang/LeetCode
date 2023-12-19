@@ -34,6 +34,13 @@ print(*a, sep='\n')
 # Change a list of strings to ints
 a = ['1', '2', '4']
 list(map(int, a))  # [1, 2, 4]
+
+a = [1, 2, 3]
+b = a + [5] # [1, 2, 3, 5]
+
+import itertools
+b = itertools.permutations(a)
+print(list(b))
 ```
 
 ## Regular Expression
