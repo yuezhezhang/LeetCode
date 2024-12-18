@@ -183,3 +183,12 @@ class Foo {
     Foo() : name(5), val(5,0) {}
 };
 ```
+### [GCC warning: will be initialized after](https://stackoverflow.com/questions/1564937/gcc-warning-will-be-initialized-after/4467690#4467690)
+* Make sure the members appear in the initializer list in the same order as they appear in the class
+  ```
+  Class C {
+     int a;
+     int b;
+     C():b(1),a(2){} //warning, should be C():a(2),b(1)
+  }
+  ```
